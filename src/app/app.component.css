@@ -1,0 +1,28 @@
+
+
+div.componentes{
+
+    margin-top: 130px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+border{
+    margin-top: 130px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    margin: 10;
+    border: 10px;;
+    padding: 10;
+    font-size: 25px;
+}
+h1{
+    margin: 50;
+    color: blue;
+    text-align: center;
+    font-size: 15px;
+    line-height: 2;
+    color: #555555;
+    background-color: #ffffff;
+}
+

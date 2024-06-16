@@ -1,0 +1,212 @@
+<div class="edite">
+    <h3>Editar aluno________________</h3>
+  
+    <div *ngIf="mensagem" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Finalizado!</strong> O aluno foi alterado!.
+      <button (click)="removerMensagem()" type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+  
+    <form [formGroup]="editarAluno" (ngSubmit)="Alterar()">
+      <div class="mb-3">
+        <label class="form-label">Nome</label>
+        <input type="text" class="form-control" placeholder="Nome completo" formControlName="Nome">
+        <div *ngIf="editarAluno.get('Nome')?.touched && editarAluno.get('Nome')?.invalid" class="text-danger">
+          <small *ngIf="editarAluno.get('Nome')?.errors?.['required']">Nome é obrigatório.</small>
+          <small *ngIf="editarAluno.get('Nome')?.errors?.['minlength']">Nome inválido.</small>
+          <small *ngIf="editarAluno.get('Nome')?.errors?.['pattern']">Nome não pode conter números.</small>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Idade</label>
+        <input type="number" class="form-control" placeholder="Idade do aluno" formControlName="Idade">
+        <div *ngIf="editarAluno.get('Idade')?.touched && editarAluno.get('Idade')?.invalid" class="text-danger">
+          <small *ngIf="editarAluno.get('Idade')?.errors?.['required']">Idade é obrigatória.</small>
+          <small *ngIf="editarAluno.get('Idade')?.errors?.['max']">Idade fora da faixa.</small>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Curso</label>
+        <input type="text" class="form-control" placeholder="Curso do aluno" formControlName="Curso">
+        <div *ngIf="editarAluno.get('Curso')?.touched && editarAluno.get('Curso')?.invalid" class="text-danger">
+          <small *ngIf="editarAluno.get('Curso')?.errors?.['required']">Curso é obrigatório.</small>
+          <small *ngIf="editarAluno.get('Curso')?.errors?.['pattern']">Curso não pode conter números.</small>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">eMail</label>
+        <input type="email" class="form-control" placeholder="Digite.seu@eMail.com" formControlName="eMail">
+        <div *ngIf="editarAluno.get('eMail')?.touched && editarAluno.get('eMail')?.invalid" class="text-danger">
+          <small *ngIf="editarAluno.get('eMail')?.errors?.['required']">Email é obrigatório.</small>
+          <small *ngIf="editarAluno.get('eMail')?.errors?.['email']">Email deve ser válido.</small>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Confirmar</button>
+    </form>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+  <div class="edite">
+    <h3>Editar aluno________________</h3>
+  
+    <div *ngIf="mensagem" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Finalizado!</strong> O aluno foi alterado!.
+      <button (click)="removerMensagem()" type="button" class="close" data-dismiss="alert" aria-label="Close">x</button>
+    </div>
+  
+    <form [formGroup]="editarAluno" (ngSubmit)="Alterar()">
+      <div class="mb-3">
+        <label class="form-label">Nome</label>
+        <input type="text" class="form-control" placeholder="Nome completo" formControlName="Nome">
+        <div *ngIf="editarAluno.get('Nome')?.touched && editarAluno.get('Nome')?.invalid" class="text-danger">
+          <small *ngIf="editarAluno.get('Nome')?.errors?.['required']">Nome é obrigatório.</small>
+          <small *ngIf="editarAluno.get('Nome')?.errors?.['minlength']">Nome inválido.</small>
+          <small *ngIf="editarAluno.get('Nome')?.errors?.['pattern']">Nome não pode conter números.</small>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Idade</label>
+        <input type="number" class="form-control" placeholder="Idade do aluno" formControlName="Idade">
+        <div *ngIf="editarAluno.get('Idade')?.touched && editarAluno.get('Idade')?.invalid" class="text-danger">
+          <small *ngIf="editarAluno.get('Idade')?.errors?.['required']">Idade é obrigatória.</small>
+          <small *ngIf="editarAluno.get('Idade')?.errors?.['max']">Idade fora da faixa.</small>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Curso</label>
+        <input type="text" class="form-control" placeholder="Curso do aluno" formControlName="Curso">
+        <div *ngIf="editarAluno.get('Curso')?.touched && editarAluno.get('Curso')?.invalid" class="text-danger">
+          <small *ngIf="editarAluno.get('Curso')?.errors?.['required']">Curso é obrigatório.</small>
+          <small *ngIf="editarAluno.get('Curso')?.errors?.['pattern']">Curso não pode conter números.</small>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">eMail</label>
+        <input type="email" class="form-control" placeholder="Digite.seu@eMail.com" formControlName="eMail">
+        <div *ngIf="editarAluno.get('eMail')?.touched && editarAluno.get('eMail')?.invalid" class="text-danger">
+          <small *ngIf="editarAluno.get('eMail')?.errors?.['required']">Email é obrigatório.</small>
+          <small *ngIf="editarAluno.get('eMail')?.errors?.['email']">Email deve ser válido.</small>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Confirmar</button>
+    </form>
+  </div>
+   -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="edite">
+    <h3>Editar aluno________________</h3>
+    <div *ngIf="mensagem" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Finalizado!</strong> O aluno foi alterado!.
+        <button (click)="removerMensagem()" type="button" data-dismiss="alert" aria-label="Close">x
+        </button>
+      </div>
+
+    <form [formGroup]="editarAluno" (ngSubmit)="Alterar()">
+
+        <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" placeholder="Nome completo" formControlName="Nome">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Idade</label>
+            <input type="number" class="form-control" placeholder="Idade do aluno" formControlName="Idade">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Curso</label>
+            <input type="text" class="form-control" placeholder="Curso do aluno" formControlName="Curso">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">eMail</label>
+            <input type="email" class="form-control" placeholder="Digite.seu@eMail.com" formControlName="eMail">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div> -->

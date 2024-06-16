@@ -1,0 +1,294 @@
+    <div class="add">
+        <p>Add-aluno</p>
+      
+        <div *ngIf="mensagem" class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Finalizado!</strong> Estudante cadastrado no banco de dados.
+          <button (click)="removerMensagem()" type="button" class="close" data-dismiss="alert" aria-label="Close">x
+          </button>
+        </div>
+      
+        <form [formGroup]="addalunoADD" (ngSubmit)="Salvar()">
+          <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" placeholder="Nome completo" formControlName="Nome">
+            <div *ngIf="addalunoADD.get('Nome')?.touched && addalunoADD.get('Nome')?.invalid" class="text-danger">
+              <small *ngIf="addalunoADD.get('Nome')?.errors?.['required']">Nome é obrigatório.</small>
+              <small *ngIf="addalunoADD.get('Nome')?.errors?.['minlength']">Nome inválido.</small>
+              <small *ngIf="addalunoADD.get('Nome')?.errors?.['pattern']">Nome não pode conter números.</small>
+            </div>
+          </div>
+      
+          <div class="mb-3">
+            <label class="form-label">Idade</label>
+            <input type="number" class="form-control" placeholder="Idade do aluno" formControlName="Idade">
+            <div *ngIf="addalunoADD.get('Idade')?.touched && addalunoADD.get('Idade')?.invalid" class="text-danger">
+              <small *ngIf="addalunoADD.get('Idade')?.errors?.['required']">Idade é obrigatória.</small>
+              <small *ngIf="addalunoADD.get('Idade')?.errors?.['max']">Idade não permitida.</small>
+              <small *ngIf="addalunoADD.get('Idade')?.errors?.['pattern']">Idade fora da faixa.</small>
+            </div>
+          </div>
+      
+          <div class="mb-3">
+            <label class="form-label">Curso</label>
+            <input type="text" class="form-control" placeholder="Curso do aluno" formControlName="Curso">
+            <div *ngIf="addalunoADD.get('Curso')?.touched && addalunoADD.get('Curso')?.invalid" class="text-danger">
+              <small *ngIf="addalunoADD.get('Curso')?.errors?.['required']">Curso é obrigatório.</small>
+              <small *ngIf="addalunoADD.get('Curso')?.errors?.['pattern']">Curso não pode conter números.</small>
+            </div>
+          </div>
+      
+          <div class="mb-3">
+            <label class="form-label">eMail</label>
+            <input type="email" class="form-control" placeholder="Digite.seu@eMail.com" formControlName="eMail">
+            <div *ngIf="addalunoADD.get('eMail')?.touched && addalunoADD.get('eMail')?.invalid" class="text-danger">
+              <small *ngIf="addalunoADD.get('eMail')?.errors?.['required']">Email é obrigatório.</small>
+              <small *ngIf="addalunoADD.get('eMail')?.errors?.['email']">Email deve ser válido.</small>
+            </div>
+          </div>
+      
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+      <div class="add">
+        <p>Add-aluno</p>
+      
+        <div *ngIf="mensagem" class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Finalizado!</strong> Estudante cadastrado no banco de dados.
+          <button (click)="removerMensagem()" type="button" class="close" data-dismiss="alert" aria-label="Close">x
+          </button>
+        </div>
+      
+        <form [formGroup]="addalunoADD" (ngSubmit)="Salvar()">
+          <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" placeholder="Nome completo" formControlName="Nome">
+            <div *ngIf="addalunoADD.get('Nome')?.touched && addalunoADD.get('Nome')?.invalid" class="text-danger">
+              <small *ngIf="addalunoADD.get('Nome')?.errors?.['required']">Nome é obrigatório.</small>
+              <small *ngIf="addalunoADD.get('Nome')?.errors?.['minlength']">Nome inválido.</small>
+              <small *ngIf="addalunoADD.get('Nome')?.errors?.['pattern']">Nome não pode conter números.</small>
+            </div>
+          </div>
+      
+          <div class="mb-3">
+            <label class="form-label">Idade</label>
+            <input type="number" class="form-control" placeholder="Idade do aluno" formControlName="Idade">
+            <div *ngIf="addalunoADD.get('Idade')?.touched && addalunoADD.get('Idade')?.invalid" class="text-danger">
+              <small *ngIf="addalunoADD.get('Idade')?.errors?.['required']">Idade é obrigatória.</small>
+              <small *ngIf="addalunoADD.get('Idade')?.errors?.['max']">Idade não permitida.</small>
+              <small *ngIf="addalunoADD.get('Idade')?.errors?.['pattern']">Idade fora da faixa.</small>
+            </div>
+          </div>
+      
+          <div class="mb-3">
+            <label class="form-label">Curso</label>
+            <input type="text" class="form-control" placeholder="Curso do aluno" formControlName="Curso">
+            <div *ngIf="addalunoADD.get('Curso')?.touched && addalunoADD.get('Curso')?.invalid" class="text-danger">
+              <small *ngIf="addalunoADD.get('Curso')?.errors?.['required']">Curso é obrigatório.</small>
+              <small *ngIf="addalunoADD.get('Curso')?.errors?.['pattern']">Curso não pode conter números.</small>
+            </div>
+          </div>
+      
+          <div class="mb-3">
+            <label class="form-label">eMail</label>
+            <input type="email" class="form-control" placeholder="Digite.seu@eMail.com" formControlName="eMail">
+            <div *ngIf="addalunoADD.get('eMail')?.touched && addalunoADD.get('eMail')?.invalid" class="text-danger">
+              <small *ngIf="addalunoADD.get('eMail')?.errors?.['required']">Email é obrigatório.</small>
+              <small *ngIf="addalunoADD.get('eMail')?.errors?.['email']">Email deve ser válido.</small>
+            </div>
+          </div>
+      
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+      </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+      <div class="add">
+        <p>Add-aluno</p>
+      
+        <div *ngIf="mensagem" class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Finalizado!</strong> Estudante cadastrado no banco de dados.
+          <button (click)="removerMensagem()" type="button" class="close" data-dismiss="alert" aria-label="Close">x
+
+          </button>
+        </div>
+      
+        <form [formGroup]="addalunoADD" (ngSubmit)="Salvar()">
+          <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" placeholder="Nome completo" formControlName="Nome">
+            <div *ngIf="addalunoADD.get('Nome')?.touched && addalunoADD.get('Nome')?.invalid" class="text-danger">
+              <small *ngIf="addalunoADD.get('Nome')?.errors?.['required']">Nome é obrigatório.</small>
+              <small *ngIf="addalunoADD.get('Nome')?.errors?.['minlength']">Nome deve ter pelo menos 3 caracteres.</small>
+              <small *ngIf="addalunoADD.get('Nome')?.errors?.['pattern']">Nome não pode conter números.</small>
+            </div>
+          </div>
+      
+          <div class="mb-3">
+            <label class="form-label">Idade</label>
+            <input type="number" class="form-control" placeholder="Idade do aluno" formControlName="Idade">
+            <div *ngIf="addalunoADD.get('Idade')?.touched && addalunoADD.get('Idade')?.invalid" class="text-danger">
+              <small *ngIf="addalunoADD.get('Idade')?.errors?.['required']">Idade é obrigatória.</small>
+              <small *ngIf="addalunoADD.get('Idade')?.errors?.['max']">Idade deve ser menor que 99.</small>
+              <small *ngIf="addalunoADD.get('Idade')?.errors?.['pattern']">Idade deve ser um número válido.</small>
+            </div>
+          </div>
+      
+          <div class="mb-3">
+            <label class="form-label">Curso</label>
+            <input type="text" class="form-control" placeholder="Curso do aluno" formControlName="Curso">
+            <div *ngIf="addalunoADD.get('Curso')?.touched && addalunoADD.get('Curso')?.invalid" class="text-danger">
+              <small *ngIf="addalunoADD.get('Curso')?.errors?.['required']">Curso é obrigatório.</small>
+              <small *ngIf="addalunoADD.get('Curso')?.errors?.['pattern']">Curso não pode conter números.</small>
+            </div>
+          </div>
+      
+          <div class="mb-3">
+            <label class="form-label">eMail</label>
+            <input type="email" class="form-control" placeholder="Digite.seu@eMail.com" formControlName="eMail">
+            <div *ngIf="addalunoADD.get('eMail')?.touched && addalunoADD.get('eMail')?.invalid" class="text-danger">
+              <small *ngIf="addalunoADD.get('eMail')?.errors?.['required']">Email é obrigatório.</small>
+              <small *ngIf="addalunoADD.get('eMail')?.errors?.['email']">Email deve ser válido.</small>
+            </div>
+          </div>
+      
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+       -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="add"> -->
+    <!-- <div class="add">
+        <p>Add-aluno</p>
+    
+    
+    
+        <div *ngIf="mensagem" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Finalizado!</strong> Estudante cadastrado no banco de dados.
+            <button (click)="removerMensagem()" type="button" data-dismiss="alert" aria-label="Close">x
+             
+               //**** <span aria-hidden="true">&times;</span> 
+
+
+            </button>
+          </div>
+    
+    
+        <form [formGroup]="addalunoADD" (ngSubmit)="Salvar()">
+    
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input type="text" class="form-control" placeholder="Nome completo" formControlName="Nome">
+            </div>
+    
+            <div class="mb-3">
+                <label class="form-label">Idade</label>
+                <input type="number" class="form-control" placeholder="Idade do aluno" formControlName="Idade">
+            </div>
+    
+            <div class="mb-3">
+                <label class="form-label">Curso</label>
+                <input type="text" class="form-control" placeholder="Curso do aluno" formControlName="Curso">
+            </div>
+    
+            <div class="mb-3">
+                <label class="form-label">eMail</label>
+                <input type="email" class="form-control" placeholder="Digite.seu@eMail.com" formControlName="eMail">
+            </div>
+    
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    
+    </div> -->
+    

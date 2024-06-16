@@ -1,0 +1,100 @@
+<!-- <div class="detalhe"> -->
+    
+<div class="detalhe">
+
+    <h3>Detalhe do aluno________________</h3>
+
+   
+    <form [formGroup]="detalheAluno" (ngSubmit)="buscarAluno()">
+
+
+        <div class="mb-3">
+        <label class="form-label">Procurar por ID:</label>
+        <input id="Procurar"  class="form-control" placeholder="Entre com o ID" formControlName="Procurar">
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+        
+
+      </form>
+        <form [formGroup]="detalheAluno" (ngSubmit)="buscarAluno()">
+
+        <div class="mb-5"></div>
+
+        <tr>Confira os dados abaixo:</tr><p></p><p></p>
+
+
+        <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" placeholder="Nome completo" formControlName="Nome">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Idade</label>
+            <input type="number" class="form-control" placeholder="Idade do aluno" formControlName="Idade">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Curso</label>
+            <input type="text" class="form-control" placeholder="Curso do aluno" formControlName="Curso">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">eMail</label>
+            <input type="email" class="form-control" placeholder="Digite.seu@eMail.com" formControlName="eMail">
+</div>
+
+
+
+
+
+
+
+           
+
+
+
+
+
+<!-- 
+        <div class="detalhe">
+            <h3>Detalhe do aluno________________</h3>
+        
+           
+            <form [formGroup]="detalheAluno" (ngSubmit)="buscarAluno()">
+                <label for="Procurar">Procurar por ID:</label>
+        
+                <input id="Procurar" formControlName="Procurar">
+        
+                <button type="submit">Buscar</button>
+        
+              </form>
+        
+        
+        
+                <form [formGroup]="detalheAluno" (ngSubmit)="buscarAluno()">
+        
+                <div class="mb-5"></div>
+        
+                <tr>Confira os dados abaixo:</tr><p></p><p></p>
+        
+        
+                <div class="mb-3">
+                    <label class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome completo" formControlName="Nome">
+                </div>
+        
+                <div class="mb-3">
+                    <label class="form-label">Idade</label>
+                    <input type="number" class="form-control" placeholder="Idade do aluno" formControlName="Idade">
+                </div>
+        
+                <div class="mb-3">
+                    <label class="form-label">Curso</label>
+                    <input type="text" class="form-control" placeholder="Curso do aluno" formControlName="Curso">
+                </div>
+        
+                <div class="mb-3">
+                    <label class="form-label">eMail</label>
+                    <input type="email" class="form-control" placeholder="Digite.seu@eMail.com" formControlName="eMail">
+                </div>
+ -->

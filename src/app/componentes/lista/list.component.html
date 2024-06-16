@@ -1,0 +1,79 @@
+<div class="lista">
+
+  <h3>Listar</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Curso</th>
+        <th scope="col">eMail</th>
+        <th scope="col">Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of alunosData"> <!-- V.5 -->
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.Nome}}</td>
+        <td>{{item.Idade}}</td>
+        <td>{{item.Curso}}</td>
+        <td>{{item.eMail}}</td>
+        <td>
+
+          <i (click)="deletarAluno(item.id)" class="fa fa-trash"></i>
+           &nbsp; <!--isso da um espacinho entre os icones -->
+          <a routerLink="/editar/{{item.id}}"><i class="fa fa-edit"></i></a>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="lista">
+
+  <h3>Listar</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Idade</th>
+        <th scope="col">Curso</th>
+        <th scope="col">eMail</th>
+        <th scope="col">Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of alunosData"> 
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.Nome}}</td>
+        <td>{{item.Idade}}</td>
+        <td>{{item.Curso}}</td>
+        <td>{{item.eMail}}</td>
+        <td>
+
+          <i (click)="deletarAluno(item.id)" class="fa fa-trash"></i>
+           &nbsp;
+          <a routerLink="/editar/{{item.id}}"><i class="fa fa-edit"></i></a>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+-->

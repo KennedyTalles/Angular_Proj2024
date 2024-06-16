@@ -1,0 +1,14 @@
+div.sobre{
+    margin-top: 140px;
+    margin: 50;
+    text-align: center;
+    color: #007bff;
+    font-size: 15px;
+    line-height: 2;
+}
+p{
+    margin: 10;
+    border: 10px;;
+    padding: 50;
+    font-size: 20px;
+}

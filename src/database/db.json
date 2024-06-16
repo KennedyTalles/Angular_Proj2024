@@ -1,0 +1,60 @@
+{
+  "alunos": [
+    {
+      "Nome": "Lambarildo Peixe",
+      "Idade": 21,
+      "Curso": "Nadador_1",
+      "eMail": "lambari@mail.com",
+      "id": "1"
+    },
+    {
+      "Nome": "John Petrucci",
+      "Idade": 33,
+      "Curso": "Eletrônica 2",
+      "eMail": "John @mail.com",
+      "id": "2"
+    },
+    {
+      "Nome": "Harry Potter",
+      "Idade": 20,
+      "Curso": "Macumbeiro",
+      "eMail": "harry@mail.com",
+      "id": "4"
+    },
+    {
+      "Nome": "Pedrin Peixoro",
+      "Idade": 28,
+      "Curso": "C.Dados",
+      "eMail": "pedrin@mail.com",
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "Nome": "joao caramelo",
+      "Idade": 21,
+      "Curso": "Sistemas de Informação",
+      "eMail": "joao@mail.com"
+    },
+    {
+      "id": "7",
+      "Nome": "Paula Teijano",
+      "Idade": 58,
+      "Curso": "Humanas",
+      "eMail": "teijano@mail.com"
+    },
+    {
+      "Nome": "philipis Fenda",
+      "Idade": 10,
+      "Curso": "Redes",
+      "eMail": "philipis@mail.com",
+      "id": "8"
+    },
+    {
+      "id": "8299",
+      "Nome": "Lucida",
+      "Idade": 51,
+      "Curso": "Estetica",
+      "eMail": "Lu@mail.com"
+    }
+  ]
+}
